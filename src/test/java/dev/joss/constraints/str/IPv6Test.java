@@ -1,16 +1,14 @@
 package dev.joss.constraints.str;
 
+import static dev.joss.utils.ConstraintViolationSetAssert.assertThat;
+
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
-import lombok.Data;
-import org.junit.jupiter.api.Test;
-
 import java.util.List;
 import java.util.Set;
-
-import static dev.joss.utils.ConstraintViolationSetAssert.assertThat;
-
+import lombok.Data;
+import org.junit.jupiter.api.Test;
 
 public class IPv6Test {
 
@@ -36,7 +34,6 @@ public class IPv6Test {
 
     assertThat(violations).hasSize(1);
     assertThat(violations).containsInvalidValue(incorrect);
-
   }
 
   @Test

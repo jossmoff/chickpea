@@ -10,7 +10,6 @@ import java.util.Set;
 import lombok.Data;
 import org.junit.jupiter.api.Test;
 
-
 public class IPv4Test {
 
   private final Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
@@ -35,7 +34,6 @@ public class IPv4Test {
 
     assertThat(violations).hasSize(1);
     assertThat(violations).containsInvalidValue(incorrect);
-
   }
 
   @Test
