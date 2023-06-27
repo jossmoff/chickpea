@@ -41,17 +41,19 @@ spotless {
     }
 }
 
-
-java {
-    withJavadocJar()
-    withSourcesJar()
-}
-
 test {
     useJUnitPlatform {
-        includeEngines 'junit-jupiter', 'junit-vintage'
+        includeEngines 'junit-jupiter'
+    }
+    finalizedBy jacocoTestReport
+}
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = true
     }
 }
+
 
 publishing {
     publications {
