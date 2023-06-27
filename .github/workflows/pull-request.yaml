@@ -1,4 +1,4 @@
-name: 🕵️ Checking Pull Request
+name: 🕵️
 
 on:
   push:
@@ -19,11 +19,8 @@ jobs:
           distribution: temurin
           java-version: 11
 
-      - name: Spotless Check
-        run: ./gradlew spotlessCheck
-
       - name: Build & Test
-        run: ./gradlew clean build --stacktrace
+        run: ./gradlew clean build
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
