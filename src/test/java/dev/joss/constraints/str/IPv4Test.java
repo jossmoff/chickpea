@@ -45,6 +45,15 @@ public class IPv4Test {
     assertThat(violations).hasSize(1);
     assertThat(violations).containsInvalidValue(incorrect);
   }
+
+  @Test
+  public void testNullChecks() {
+    IPv4BeanNulls iPv4BeanNulls = new IPv4BeanNulls();
+
+    Set<ConstraintViolation<IPv4BeanNulls>> violations = validator.validate(iPv4BeanNulls);
+
+    assertThat(violations).hasSize(2);
+  }
 }
 
 @Data
@@ -73,4 +82,15 @@ class IPv4BeanMethods {
 class IPv4BeanType {
   private List<@IPv4 String> correctIps = List.of(IPv4Test.correct);
   private List<@IPv4 String> incorrectIps = List.of(IPv4Test.incorrect);
+}
+
+@Data
+class IPv4BeanNulls {
+
+  @IPv4 private String nullField = null;
+
+  @IPv4
+  private String getNullMethod() {
+    return null;
+  }
 }
