@@ -45,6 +45,15 @@ public class IPv6Test {
     assertThat(violations).hasSize(1);
     assertThat(violations).containsInvalidValue(incorrect);
   }
+
+  @Test
+  public void testNullChecks() {
+    IPv6BeanNulls iPv6BeanNulls = new IPv6BeanNulls();
+
+    Set<ConstraintViolation<IPv6BeanNulls>> violations = validator.validate(iPv6BeanNulls);
+
+    assertThat(violations).hasSize(2);
+  }
 }
 
 @Data
@@ -73,4 +82,15 @@ class IPv6BeanMethods {
 class IPv6BeanType {
   private List<@IPv6 String> correctIps = List.of(IPv6Test.correct);
   private List<@IPv6 String> incorrectIps = List.of(IPv6Test.incorrect);
+}
+
+@Data
+class IPv6BeanNulls {
+
+  @IPv6 private String nullField = null;
+
+  @IPv6
+  private String getNullMethod() {
+    return null;
+  }
 }
