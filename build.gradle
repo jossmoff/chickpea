@@ -1,0 +1,88 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+    id 'com.diffplug.spotless' version '6.18.0'
+    id 'maven-publish'
+    id 'signing'
+}
+
+group = 'dev.joss'
+version = '1.0.0'
+
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
+
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    implementation 'org.hibernate.validator:hibernate-validator:8.0.1.Final'
+
+}
+
+
+spotless {
+    java {
+        googleJavaFormat()
+    }
+}
+
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId = 'dev.joss'
+            artifactId = 'chickpea'
+            from components.java
+            pom {
+                name = 'Chickpea'
+                description = 'An extension of the Java Bean Validation Specification providing useful annotations for common validation formats .'
+                url = 'https://github.com/jossmoff/chickpea'
+                inceptionYear = '2023'
+                licenses {
+                    license {
+                        name = 'The MIT License (MIT)'
+                        url = 'http://opensource.org/licenses/MIT'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'jossmoff'
+                        name = 'Joss Moffatt'
+                        email = 'josshmoffatt@gmail.com'
+                    }
+                }
+                scm {
+                    connection = 'scm:git@github.com:jossmoff/chickpea.git'
+                    developerConnection = 'scm:git@github.com:jossmoff/chickpea.git'
+                    url = 'https://github.com/jossmoff/chickpea'
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            name = "OSSRH"
+            url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+            credentials {
+                username = project.findProperty("sonatypeUsername")
+                password = project.findProperty("sonatypePassword")
+            }
+        }
+    }
+}
+
+signing {
+    def signingKey = project.findProperty("signingKey")
+    def signingPassword = project.findProperty("signingPassword")
+    useInMemoryPgpKeys(signingKey, signingPassword)
+    sign publishing.publications.mavenJava
+}
