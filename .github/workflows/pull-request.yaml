@@ -22,8 +22,8 @@ jobs:
       - name: Spotless Check
         run: ./gradlew spotlessCheck
 
-      - name: Unit Test
-        run: ./gradlew test --stacktrace
+      - name: Build & Test
+        run: ./gradlew clean build --stacktrace
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
