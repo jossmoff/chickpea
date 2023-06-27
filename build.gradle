@@ -47,8 +47,6 @@ test {
     }
 }
 
-check.dependsOn jacocoTestReport
-
 publishing {
     publications {
         mavenJava(MavenPublication) {
