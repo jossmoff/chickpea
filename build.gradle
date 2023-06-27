@@ -12,6 +12,9 @@ version = '1.0.0'
 sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
 
+ext {
+    junitVersion = "5.8.1"
+}
 
 repositories {
     mavenCentral()
@@ -20,6 +23,14 @@ repositories {
 
 dependencies {
     implementation 'org.hibernate.validator:hibernate-validator:8.0.1.Final'
+    implementation 'commons-validator:commons-validator:1.7'
+
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
+    testImplementation 'org.projectlombok:lombok:1.18.20'
+    testImplementation 'org.assertj:assertj-core:3.24.2'
+    testImplementation 'org.glassfish:jakarta.el:5.0.0-M1'
+
 
 }
 
@@ -34,6 +45,12 @@ spotless {
 java {
     withJavadocJar()
     withSourcesJar()
+}
+
+test {
+    useJUnitPlatform {
+        includeEngines 'junit-jupiter', 'junit-vintage'
+    }
 }
 
 publishing {
