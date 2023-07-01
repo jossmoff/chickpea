@@ -15,16 +15,19 @@ public class ConstraintViolationSetAssert<T>
     return new ConstraintViolationSetAssert<>(actual);
   }
 
+  public ConstraintViolationSetAssert<T> isEmpty() {
+    org.assertj.core.api.Assertions.assertThat(actual).isEmpty();
+    return this;
+  }
+
   public ConstraintViolationSetAssert<T> hasSize(int size) {
     org.assertj.core.api.Assertions.assertThat(actual).hasSize(size);
     return this;
   }
 
   public ConstraintViolationSetAssert<T> containsInvalidValue(Object invalidValue) {
-    isNotNull();
-
     for (ConstraintViolation<T> violation : actual) {
-      if (violation.getInvalidValue().equals(invalidValue)) {
+      if (violation.getInvalidValue() != null && violation.getInvalidValue().equals(invalidValue)) {
         return this;
       }
     }
