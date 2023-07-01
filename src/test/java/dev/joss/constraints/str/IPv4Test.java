@@ -17,7 +17,7 @@ public class IPv4Test {
   public static final String incorrect = "not-an-ip";
 
   @Test
-  public void testFields() {
+  public void testAnnotatedFieldsCausesExpectedViolation() {
     IPv4BeanFields iPv4BeanFields = new IPv4BeanFields();
 
     Set<ConstraintViolation<IPv4BeanFields>> violations = validator.validate(iPv4BeanFields);
@@ -27,7 +27,7 @@ public class IPv4Test {
   }
 
   @Test
-  public void testMethods() {
+  public void testAnnotatedMethodsCausesExpectedViolation() {
     IPv4BeanMethods iPv4BeanMethods = new IPv4BeanMethods();
 
     Set<ConstraintViolation<IPv4BeanMethods>> violations = validator.validate(iPv4BeanMethods);
@@ -37,7 +37,7 @@ public class IPv4Test {
   }
 
   @Test
-  public void testType() {
+  public void testAnnotatedTypesCausesExpectedViolation() {
     IPv4BeanType iPv4BeanType = new IPv4BeanType();
 
     Set<ConstraintViolation<IPv4BeanType>> violations = validator.validate(iPv4BeanType);
@@ -47,7 +47,7 @@ public class IPv4Test {
   }
 
   @Test
-  public void testNullChecks() {
+  public void testNullBeansCausesExpectedViolation() {
     IPv4BeanNulls iPv4BeanNulls = new IPv4BeanNulls();
 
     Set<ConstraintViolation<IPv4BeanNulls>> violations = validator.validate(iPv4BeanNulls);
