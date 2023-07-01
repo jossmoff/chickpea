@@ -24,6 +24,9 @@ import java.lang.annotation.Target;
  *   <li>Requires Numeric (defaults true)
  * </ul>
  *
+ * The constraints follow logical implication. That is, if a constaint is marked as not required,
+ * but it is satisfied then it is still a valid password.
+ *
  * @author Joss Moffatt
  * @since 1.0.0
  */
