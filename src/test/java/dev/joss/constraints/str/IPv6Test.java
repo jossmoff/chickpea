@@ -17,7 +17,7 @@ public class IPv6Test {
   public static final String incorrect = "not-an-ip";
 
   @Test
-  public void testFields() {
+  public void testAnnotatedFieldsCausesExpectedViolation() {
     IPv6BeanFields iPv6BeanFields = new IPv6BeanFields();
 
     Set<ConstraintViolation<IPv6BeanFields>> violations = validator.validate(iPv6BeanFields);
@@ -27,7 +27,7 @@ public class IPv6Test {
   }
 
   @Test
-  public void testMethods() {
+  public void testAnnotatedMethodsCausesExpectedViolation() {
     IPv6BeanMethods iPv6BeanMethods = new IPv6BeanMethods();
 
     Set<ConstraintViolation<IPv6BeanMethods>> violations = validator.validate(iPv6BeanMethods);
@@ -37,7 +37,7 @@ public class IPv6Test {
   }
 
   @Test
-  public void testType() {
+  public void testAnnotatedTypesCausesExpectedViolation() {
     IPv6BeanType iPv6BeanType = new IPv6BeanType();
 
     Set<ConstraintViolation<IPv6BeanType>> violations = validator.validate(iPv6BeanType);
@@ -47,7 +47,7 @@ public class IPv6Test {
   }
 
   @Test
-  public void testNullChecks() {
+  public void testNullBeansCausesExpectedViolation() {
     IPv6BeanNulls iPv6BeanNulls = new IPv6BeanNulls();
 
     Set<ConstraintViolation<IPv6BeanNulls>> violations = validator.validate(iPv6BeanNulls);
