@@ -1,7 +1,7 @@
 name: ✨ Enhancement
-description: Add an enhanment for Gatling Step Function Extension
+description: Add an enhanment for Chickpea
 title: "[Enhancement]"
-labels: ["kind/enhancement"]
+labels: ["kind/✨ enhancement"]
 assignees:
   - jossmoff
 body:
