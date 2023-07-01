@@ -1,17 +1,15 @@
 package dev.joss.constraints.str.validators;
 
-import static java.util.stream.Collectors.toSet;
-
 import dev.joss.constraints.str.Password;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import java.util.Set;
-import java.util.stream.IntStream;
+import java.util.stream.Collectors;
 
 public class PasswordValidator implements ConstraintValidator<Password, String> {
 
-  private static final Set<Character> SPECIAL_CHARS =
-      " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~".chars().mapToObj(i -> (char) i).collect(toSet());
+  private static final Set<Integer> SPECIAL_CHARS =
+      " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~".chars().boxed().collect(Collectors.toSet());
 
   private Password annotation;
 
@@ -30,17 +28,15 @@ public class PasswordValidator implements ConstraintValidator<Password, String> 
       return false;
     }
 
-    IntStream passwordChars = value.chars();
-
     // These constraints are implications converted to DNF to allow for shortcircuiting
     boolean lowerCaseConstraint =
-        !annotation.requiresLowerCase() || passwordChars.anyMatch(Character::isLowerCase);
+        !annotation.requiresLowerCase() || value.chars().anyMatch(Character::isLowerCase);
     boolean upperCaseConstraint =
-        !annotation.requiresLowerCase() || passwordChars.anyMatch(Character::isUpperCase);
+        !annotation.requiresUpperCase() || value.chars().anyMatch(Character::isUpperCase);
     boolean specialCharsConstraint =
-        !annotation.requiresSpecialChar() || passwordChars.anyMatch(SPECIAL_CHARS::contains);
+        !annotation.requiresSpecialChar() || value.chars().anyMatch(SPECIAL_CHARS::contains);
     boolean numericConstraint =
-        !annotation.requiresNumeric() || passwordChars.anyMatch(Character::isDigit);
+        !annotation.requiresNumeric() || value.chars().anyMatch(Character::isDigit);
 
     return lowerCaseConstraint
         && upperCaseConstraint
