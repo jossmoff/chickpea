@@ -33,8 +33,15 @@ public class ConstraintViolationSetAssert<T>
     }
 
     failWithMessage(
-        "Expected to find a violation with an invalid value <%s>, but none were found",
+        "Expected to find a violation with an invalid value <%s>, but it was not found.",
         invalidValue);
+    return this;
+  }
+
+  public ConstraintViolationSetAssert<T> containsInvalidValues(Object... invalidValues) {
+    for (Object invalidValue : invalidValues) {
+      containsInvalidValue(invalidValue);
+    }
     return this;
   }
 }

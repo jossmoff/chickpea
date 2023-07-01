@@ -30,12 +30,14 @@ public class PasswordTest {
         validator.validate(passwordBeanFields);
 
     assertThat(violations).hasSize(6);
-    assertThat(violations).containsInvalidValue(tooShortPassword);
-    assertThat(violations).containsInvalidValue(tooLongPassword);
-    assertThat(violations).containsInvalidValue(missingLowerCasePassword);
-    assertThat(violations).containsInvalidValue(missingUpperCasePassword);
-    assertThat(violations).containsInvalidValue(missingSpecialCharacterPassword);
-    assertThat(violations).containsInvalidValue(missingNumericCharacterPassword);
+    assertThat(violations)
+        .containsInvalidValues(
+            tooShortPassword,
+            tooLongPassword,
+            missingLowerCasePassword,
+            missingUpperCasePassword,
+            missingSpecialCharacterPassword,
+            missingNumericCharacterPassword);
   }
 
   @Test
@@ -56,12 +58,14 @@ public class PasswordTest {
         validator.validate(passwordBeanMethods);
 
     assertThat(violations).hasSize(6);
-    assertThat(violations).containsInvalidValue(tooShortPassword);
-    assertThat(violations).containsInvalidValue(tooLongPassword);
-    assertThat(violations).containsInvalidValue(missingLowerCasePassword);
-    assertThat(violations).containsInvalidValue(missingUpperCasePassword);
-    assertThat(violations).containsInvalidValue(missingSpecialCharacterPassword);
-    assertThat(violations).containsInvalidValue(missingNumericCharacterPassword);
+    assertThat(violations)
+        .containsInvalidValues(
+            tooShortPassword,
+            tooLongPassword,
+            missingLowerCasePassword,
+            missingUpperCasePassword,
+            missingSpecialCharacterPassword,
+            missingNumericCharacterPassword);
   }
 
   @Test
@@ -71,12 +75,14 @@ public class PasswordTest {
     Set<ConstraintViolation<PasswordBeanType>> violations = validator.validate(passwordBeanType);
 
     assertThat(violations).hasSize(6);
-    assertThat(violations).containsInvalidValue(tooShortPassword);
-    assertThat(violations).containsInvalidValue(tooLongPassword);
-    assertThat(violations).containsInvalidValue(missingLowerCasePassword);
-    assertThat(violations).containsInvalidValue(missingUpperCasePassword);
-    assertThat(violations).containsInvalidValue(missingSpecialCharacterPassword);
-    assertThat(violations).containsInvalidValue(missingNumericCharacterPassword);
+    assertThat(violations)
+        .containsInvalidValues(
+            tooShortPassword,
+            tooLongPassword,
+            missingLowerCasePassword,
+            missingUpperCasePassword,
+            missingSpecialCharacterPassword,
+            missingNumericCharacterPassword);
   }
 
   @Test
