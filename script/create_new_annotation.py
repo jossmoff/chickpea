@@ -144,7 +144,7 @@ create_dirs_if_non_existent(annotation_interface_path, annotation_validator_path
 
 annotation_interface_file_name = f'{annotation_name}.java'
 annotation_validator_file_name = f'{annotation_name}Validator.java'
-annotation_test_file_name = f'{annotation_name}.java'
+annotation_test_file_name = f'{annotation_name}Test.java'
 
 with open(f'{annotation_interface_path}/{annotation_interface_file_name}', 'w+') as f:
   f.writelines(annotation_interface)
