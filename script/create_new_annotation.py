@@ -8,7 +8,7 @@ def create_dirs_if_non_existent(*dirs):
 annotation_name = input('🫘 Annotation name: ')
 annotation_package_offset = input('🫘 Package offset from dev.joss.chickpea.constraints (e.g. str, aws, or something new): ')
 annotation_package = f'dev.joss.chickpea.constraints.{annotation_package_offset}'
-annotation_validator_package = f'{annotation_package}.validator'
+annotation_validator_package = f'{annotation_package}.validators'
 author_name = input('🫘 Author name: ')
 
 annotation_interface = f'''package {annotation_package};
@@ -137,7 +137,7 @@ class {annotation_name}BeanType {{
 '''
 
 annotation_interface_path = f'src/main/java/{annotation_package.replace(".", "/")}'
-annotation_validator_path = f'{annotation_interface_path}/validator'
+annotation_validator_path = f'{annotation_interface_path}/validators'
 annotation_test_path = annotation_interface_path.replace('main', 'test')
 
 create_dirs_if_non_existent(annotation_interface_path, annotation_validator_path, annotation_test_path)
