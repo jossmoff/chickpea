@@ -1,9 +1,9 @@
-package dev.joss.constraints.str;
+package dev.joss.chickpea.constraints.str;
 
 import static java.lang.annotation.ElementType.*;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
-import dev.joss.constraints.str.validators.PasswordValidator;
+import dev.joss.chickpea.constraints.str.validators.PasswordValidator;
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
 import java.lang.annotation.Documented;

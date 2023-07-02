@@ -1,4 +1,4 @@
-package dev.joss.constraints.str;
+package dev.joss.chickpea.constraints.str;
 
 import static dev.joss.utils.ConstraintViolationSetAssert.assertThat;
 

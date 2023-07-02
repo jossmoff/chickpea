@@ -1,6 +1,6 @@
-package dev.joss.constraints.str.validators;
+package dev.joss.chickpea.constraints.str.validators;
 
-import dev.joss.constraints.str.Password;
+import dev.joss.chickpea.constraints.str.Password;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import java.util.Set;

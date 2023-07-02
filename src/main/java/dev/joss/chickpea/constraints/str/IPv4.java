@@ -1,9 +1,9 @@
-package dev.joss.constraints.aws;
+package dev.joss.chickpea.constraints.str;
 
 import static java.lang.annotation.ElementType.*;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
-import dev.joss.constraints.aws.validators.ARNValidator;
+import dev.joss.chickpea.constraints.str.validators.IPv4Validator;
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
 import java.lang.annotation.Documented;
@@ -11,19 +11,17 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
 /**
- * The annotated element must conform to the ARN format.
+ * The annotated element must conform to the IPv4 format.
  *
- * @see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">ARN
- *     Format</a>
  * @author Joss Moffatt
  * @since 1.0.0
  */
 @Documented
-@Constraint(validatedBy = ARNValidator.class)
+@Constraint(validatedBy = IPv4Validator.class)
 @Target({METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE})
 @Retention(RUNTIME)
-public @interface ARN {
-  String message() default "{chickpea.constraints.string.ARN}";
+public @interface IPv4 {
+  String message() default "{chickpea.constraints.string.IPv4}";
 
   Class<?>[] groups() default {};
 

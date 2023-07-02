@@ -1,8 +1,8 @@
-package dev.joss.constraints.aws.validators;
+package dev.joss.chickpea.constraints.aws.validators;
 
 import static software.amazon.awssdk.arns.Arn.fromString;
 
-import dev.joss.constraints.aws.ARN;
+import dev.joss.chickpea.constraints.aws.ARN;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 
