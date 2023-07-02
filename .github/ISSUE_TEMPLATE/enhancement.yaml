@@ -1,10 +1,14 @@
 name: ✨ Enhancement
-description: Add an enhanment for Chickpea
+description: Add an enhancement for Chickpea
 title: "[Enhancement]"
-labels: ["kind/✨ enhancement"]
+labels: ["✨ enhancement"]
 assignees:
   - jossmoff
 body:
+  - type: markdown
+    attributes:
+      value: |
+        🫘 Thank you very much for submitting feedback to Chickpea!
   - type: checkboxes
     attributes:
       label: Search before asking

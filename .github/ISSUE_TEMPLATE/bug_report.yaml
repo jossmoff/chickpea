@@ -1,14 +1,14 @@
 name: 🐛 Bug report
 title: "[Bug] "
 description: Problems and issues with code of Chickpea
-labels: ["kind/bug"]
+labels: ["🐛 bug"]
 assignees:
   - jossmoff
 body:
   - type: markdown
     attributes:
       value: |
-        🐣 Thank you very much for submitting feedback to Chickpea!🫛
+        🫘 Thank you very much for submitting feedback to Chickpea!
 
   - type: checkboxes
     attributes:
