@@ -1,4 +1,4 @@
-package dev.joss.utils;
+package dev.joss.chickpea.utils;
 
 import jakarta.validation.ConstraintViolation;
 import java.util.Set;
