@@ -1,6 +1,6 @@
 package dev.joss.chickpea.constraints.str;
 
-import static dev.joss.utils.ConstraintViolationSetAssert.assertThat;
+import static dev.joss.chickpea.utils.ConstraintViolationSetAssert.assertThat;
 
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
