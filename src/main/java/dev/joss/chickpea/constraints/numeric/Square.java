@@ -11,7 +11,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
 /**
- * The annotated element must be a perfect square
+ * The annotated element must be a perfect square. This can be applied to numeric values.
  *
  * @author Joss Moffatt
  * @since 1.0.0
