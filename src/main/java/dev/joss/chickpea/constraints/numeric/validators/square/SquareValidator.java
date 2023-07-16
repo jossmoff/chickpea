@@ -18,7 +18,6 @@ public class SquareValidator implements ConstraintValidator<Square, Number> {
 
     if (value instanceof BigDecimal) {
       BigDecimal bigDecimalValue = (BigDecimal) value;
-      if (bigDecimalValue.scale() > 0) return false;
       return isPerfectSquareBigInteger(bigDecimalValue.toBigInteger());
     }
 
