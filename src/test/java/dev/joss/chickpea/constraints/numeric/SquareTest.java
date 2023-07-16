@@ -150,6 +150,8 @@ class SquareBeanFields {
 
   @Square private BigDecimal correctBigDecimal = SquareTest.correctBigDecimal;
   @Square private BigDecimal incorrectBigDecimal = SquareTest.incorrectBigDecimal;
+
+  @Square private Integer nullValue = null;
 }
 
 @Data
@@ -253,6 +255,11 @@ class SquareBeanMethods {
   @Square
   private BigDecimal getIncorrectBigDecimal() {
     return SquareTest.incorrectBigDecimal;
+  }
+
+  @Square
+  private Integer getNullValue() {
+    return null;
   }
 }
 
