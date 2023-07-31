@@ -24,7 +24,7 @@ repositories {
 dependencies {
     implementation 'org.hibernate.validator:hibernate-validator:8.0.1.Final'
     implementation 'commons-validator:commons-validator:1.7'
-    implementation 'software.amazon.awssdk:arns:2.20.96'
+    implementation 'software.amazon.awssdk:arns:2.20.116'
 
 
     testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
