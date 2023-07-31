@@ -33,7 +33,7 @@ dependencies {
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
     testImplementation 'org.assertj:assertj-core:3.24.2'
     testImplementation 'org.glassfish:jakarta.el:5.0.0-M1'
-    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.10.0-M1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.10.0'
 
 
 
